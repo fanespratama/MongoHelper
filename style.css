@@ -1,0 +1,19 @@
+
+.col{
+    padding: 3rem;
+}
+
+textarea{
+    width: 100%;
+    padding: 0.5rem;
+}
+
+table,tr,td{
+    padding: 0;
+    margin: 0;
+}
+
+
+table tr td:last-child textarea{
+    background-color: rgb(225, 225, 225);
+}
