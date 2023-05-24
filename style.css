@@ -1,6 +1,8 @@
-
-.col{
-    padding: 3rem;
+.container{
+    background-color: rgb(255, 246, 235);
+    margin-top: 7vh;
+    border-radius: 10px;
+    box-shadow: 0.3rem 0.3rem 20px 0.1rem #888888;
 }
 
 textarea{
@@ -14,6 +16,76 @@ table,tr,td{
 }
 
 
-table tr td:last-child textarea{
-    background-color: rgb(225, 225, 225);
+td.left{
+    max-width: 5rem;
+}
+
+td.delete{
+    max-width: 1rem;
+}
+
+td.checkbox{
+    max-width: 3rem;
+}
+
+button#copyButton{
+    font-size: 0.8rem;
+    padding: 0.5rem;
+}
+
+
+textarea#result{
+    background-color: rgba(0, 0, 0, 0.753);
+    color: white;
+    border-radius: 5px;
+    min-height: 10vh;
+}
+
+.section-title{
+    font-size: 1.7rem;
+}
+
+.form-check-input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+@media only screen and (max-width: 1400px) {
+
+    td.checkbox{
+        max-width: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    td.left{
+        max-width: 3.5rem;
+    }
+    td.right{
+        max-width: 5.5rem;
+    }
+    td.checkbox{
+        max-width: 1.5rem;
+    }
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    td.left{
+        max-width: 3rem;
+    }
+
+    td.right{
+        max-width: 5rem;
+    }
+
+    td.checkbox{
+        max-width: 2rem;
+    }
+
+    td.delete{
+        max-width: 1.5rem;
+    }
 }
