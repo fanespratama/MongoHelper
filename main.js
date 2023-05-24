@@ -1,5 +1,5 @@
-function tambah() {
-    var table = document.getElementById("dataTable");
+function tambah(element) {
+    var table = document.getElementById(element);
     var newRow = table.insertRow();
     var leftCell = newRow.insertCell(0);
     var rightCell = newRow.insertCell(1);
@@ -14,17 +14,31 @@ function tambah() {
     leftCell.innerHTML = '<textarea placeholder="key" rows="1"></textarea>';
     rightCell.innerHTML = '<textarea placeholder="value" rows="1"></textarea>';
     checkboxCell.innerHTML = '<div class="form-check form-check-inline">\n<input class="form-check-input" type="checkbox" name="int" id="intCheckbox">\n<label class="form-check-label" for="intCheckbox">int</label>\n</div>\n<div class="form-check form-check-inline">\n<input class="form-check-input" type="checkbox" name="array" id="arrayCheckbox">\n<label class="form-check-label" for="arrayCheckbox">array</label>\n</div>';
-    deleteCell.innerHTML = '<button class="btn btn-danger" onclick="hapus(this.parentNode.parentNode)">-</button>';
+    deleteCell.innerHTML = `<button class="btn btn-danger" onclick="hapus('${element}', this.parentNode.parentNode)">-</button>`;
 }
 
-function hapus(row) {
-    var table = document.getElementById("dataTable");
+function hapus(element, row) {
+    var table = document.getElementById(element);
     table.deleteRow(row.rowIndex);
 }
 
+function copyToClipboard(result) {
+    var resultTextArea = document.getElementById(result);
+    resultTextArea.select();
+    resultTextArea.setSelectionRange(0, 99999); 
 
-function generate() {
-    var table = document.getElementById("dataTable");
+    document.execCommand("copy");
+
+    var copyButton = document.getElementById("copyButton");
+    copyButton.textContent = "Copied!";
+    setTimeout(function() {
+        copyButton.textContent = "Click to Copy";
+    }, 2000);
+}
+
+
+function generateInsert() {
+    var table = document.getElementById('dataTable');
     var rows = table.getElementsByTagName("tr");
 
     var result = {};
@@ -50,21 +64,12 @@ function generate() {
         }
     }
 
-    var resultTextArea = document.getElementById("result");
+    var resultTextArea = document.getElementById('result-insert');
     resultTextArea.value = JSON.stringify(result);
 }
 
-function copyToClipboard() {
-    var resultTextArea = document.getElementById("result");
-    resultTextArea.select();
-    resultTextArea.setSelectionRange(0, 99999); 
-
-    document.execCommand("copy");
-
-    var copyButton = document.getElementById("copyButton");
-    copyButton.textContent = "Copied!";
-    setTimeout(function() {
-        copyButton.textContent = "Click to Copy";
-    }, 2000);
+function generateFind() {
+        
 }
+
 
