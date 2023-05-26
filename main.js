@@ -69,7 +69,29 @@ function generateInsert() {
 }
 
 function generateFind() {
-        
+    var table = document.getElementById('dataTable2');
+    var rows = table.getElementsByTagName("tr");
+
+    var result = {};
+
+    for (var i = 0; i < rows.length; i++) {
+        var row = rows[i];
+        var key = row.querySelector(".left textarea").value;
+        var value = row.querySelector(".right textarea").value;
+        var isShow = row.querySelector("[name='show']").checked;
+
+        if (key && value) {
+            if (isArray) {
+                value = value.split(",").map(item => item.trim());
+            } else if (isInt) {
+                value = parseInt(value);
+            }
+            result[key] = value;
+        }
+    }
+
+    var resultTextArea = document.getElementById('result-insert');
+    resultTextArea.value = JSON.stringify(result);
 }
 
 

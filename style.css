@@ -34,7 +34,7 @@ button#copyButton{
 }
 
 
-textarea#result{
+textarea#result-insert, textarea#result-find{
     background-color: rgba(0, 0, 0, 0.753);
     color: white;
     border-radius: 5px;
