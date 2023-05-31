@@ -1,91 +1,103 @@
-.container{
-    background-color: rgb(255, 246, 235);
-    margin-top: 7vh;
-    border-radius: 10px;
-    box-shadow: 0.3rem 0.3rem 20px 0.1rem #888888;
-}
-
-textarea{
-    width: 100%;
-    padding: 0.5rem;
-}
-
-table,tr,td{
-    padding: 0;
-    margin: 0;
-}
-
-
-td.left{
-    max-width: 5rem;
-}
-
-td.delete{
-    max-width: 1rem;
-}
-
-td.checkbox{
-    max-width: 3rem;
-}
-
-button#copyButton{
-    font-size: 0.8rem;
-    padding: 0.5rem;
-}
-
-
-textarea#result-insert, textarea#result-find{
-    background-color: rgba(0, 0, 0, 0.753);
-    color: white;
-    border-radius: 5px;
-    min-height: 10vh;
-}
-
-.section-title{
-    font-size: 1.7rem;
-}
-
-.form-check-input:focus {
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-
-@media only screen and (max-width: 1400px) {
-
-    td.checkbox{
-        max-width: 1.5rem;
+    .container{
+        background-color: rgb(255, 246, 235);
+        margin-top: 7vh;
+        border-radius: 10px;
+        box-shadow: 0.3rem 0.3rem 20px 0.1rem #888888;
+        padding: 3rem !important;
     }
-}
 
-@media only screen and (max-width: 990px) {
+    textarea{
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    table,tr,td{
+        padding: 0;
+        margin: 0;
+    }
+
+
     td.left{
-        max-width: 3.5rem;
-    }
-    td.right{
-        max-width: 5.5rem;
-    }
-    td.checkbox{
-        max-width: 1.5rem;
-    }
-}
-
-
-
-@media only screen and (max-width: 768px) {
-    td.left{
-        max-width: 3rem;
-    }
-
-    td.right{
         max-width: 5rem;
     }
 
-    td.checkbox{
-        max-width: 2rem;
+    td.delete{
+        max-width: 1rem;
     }
 
-    td.delete{
-        max-width: 1.5rem;
+    td.checkbox{
+        max-width: 3rem;
     }
-}
+
+    button#copyButton{
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+
+
+    textarea#result-insert, textarea#result-find{
+        background-color: rgba(0, 0, 0, 0.753);
+        color: white;
+        border-radius: 5px;
+        min-height: 10vh;
+    }
+
+    .section-title{
+        font-size: 1.7rem;
+    }
+
+    .form-check-input:focus {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+
+    @media only screen and (max-width: 1400px) {
+
+        td.checkbox{
+            max-width: 1.5rem;
+        }
+    }
+
+    @media only screen and (max-width: 990px) {
+        td.left{
+            max-width: 3.5rem;
+        }
+        td.right{
+            max-width: 5.5rem;
+        }
+        td.checkbox{
+            max-width: 1.5rem;
+        }
+    }
+
+
+
+    @media only screen and (max-width: 768px) {
+        .container{
+            padding: 0.8rem !important;
+        }
+
+        td.delete button{
+            height: 1.8rem;
+            width: 1.5rem;
+            padding: 0;
+            margin-top: 1vh;
+        }
+
+        td.left{
+            max-width: 2.5rem;
+        }
+
+        td.right{
+            max-width: 4.5rem;
+        }
+
+        td.checkbox{
+            max-width: 2rem;
+        }
+
+        td.delete{
+            max-width: 1.5rem;
+        }
+    }
