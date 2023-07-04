@@ -1,3 +1,54 @@
+function getLocalTheme(){
+  localStorage.getItem('theme') == null ? setLocalTheme('light') : localStorage.getItem('theme');
+  return localStorage.getItem('theme');
+}
+function setLocalTheme(theme){
+  localStorage.setItem('theme', theme);
+}
+setTheme();
+
+function setTheme(isPressed=false) {
+  if(isPressed) { setLocalTheme(getLocalTheme() == 'dark' ? 'light' : 'dark'); }
+  let body = document.querySelector("body");
+  let container = document.querySelector(".container");
+  let shortcut = document.querySelector(".shortcut");
+  let resultInsert = document.querySelector("#result-insert");
+  let allElements = document.querySelectorAll("*");
+  let button = document.querySelector(".themeButton");
+
+  if (getLocalTheme() == "dark") {
+    body.style.backgroundColor = "#1B2430";
+    container.style.backgroundColor = "#5B8FB9";
+    shortcut.style.backgroundColor = "#5B8FB9";
+    resultInsert.style.backgroundColor = "#B6EADA";
+    resultInsert.style.color = "black";
+    allElements.forEach(function (element) {
+      if (element.tagName !== 'TEXTAREA') {
+        element.style.color = 'white';
+      }
+    });
+    button.innerHTML = "make it Light";
+    button.className = "themeButton btn border border-light";
+    setLocalTheme('dark');
+
+  } else if (getLocalTheme() == "light") {
+    body.style.backgroundColor = "";
+    container.style.backgroundColor = "";
+    shortcut.style.backgroundColor = "";
+    resultInsert.style.backgroundColor = "";
+    resultInsert.style.color = "";
+    allElements.forEach(function (element) {
+      element.style.color = "";
+    });
+    button.innerHTML = "make it Dark"
+    button.className = "themeButton btn border border-dark";
+    setLocalTheme('light');
+  }
+}
+
+
+
+
 var textareas = document.getElementsByTagName('textarea');
 for (var i = 0; i < textareas.length; i++) {
   var textarea = textareas[i];
@@ -131,7 +182,6 @@ function hapus(element, row) {
     previousTextarea.focus();
     if (previousTextarea) {
       var table = document.getElementById(element);
-      console.log(row.rowIndex);
       table.deleteRow(row.rowIndex);
       event.preventDefault();
     }
