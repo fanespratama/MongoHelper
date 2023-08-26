@@ -1,6 +1,6 @@
 # MongoHelper / JSON Maker
 
-Prototype website : [bit.ly/mongohelper](https://mongohelper.vanezkun.repl.co/)
+Prototype website : [fanes.site](https://fanes.site)
 
 Note :
 - If you check array, you can set multiple value with coma (,) as separator. ex: "eating, sleep, gaming".
